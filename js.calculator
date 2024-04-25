@@ -1,0 +1,13 @@
+depositValue.addEventListener("keyup", () => {
+    loanAmount.value = homeValue.value - depositValue.value;
+    var loanAmountValue = loanAmount.value;
+    return loanAmountValue;
+  });
+
+function calculateMortgage(loanAmount, interestRate,lengthOfLoan){
+        var rate = interestRate / 12 / 100;
+        var length = lengthOfLoan * 12;
+        var result = loanAmount * (rate * Math.pow(1 + rate, length)) / (Math.pow(1 + rate, length) - 1);
+        result = Math.round(result * 100) / 100;
+        return result;
+}
